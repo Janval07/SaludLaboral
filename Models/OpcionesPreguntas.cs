@@ -15,4 +15,8 @@ public partial class OpcionesPreguntas
 
     [StringLength(50)]
     public string? Opcion { get; set; }
+
+    [ForeignKey("IdPregunta")]
+    [InverseProperty("OpcionesPreguntas")]
+    public virtual Pregunta? IdPreguntaNavigation { get; set; }
 }

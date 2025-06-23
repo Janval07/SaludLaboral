@@ -25,7 +25,7 @@
           </li>
 
           <li class="nav-item">
-            <router-link to="/login" target="_top" class="nav-link"> Salir </router-link>
+            <a class="nav-link" @click="Logout" target="_top">Salir</a>
           </li>
         </ul>
       </div>
@@ -88,4 +88,17 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {}
+  },
+  methods: {
+    async Logout() {
+      localStorage.removeItem('userSession')
+      this.$router.push({ name: 'login' })
+    },
+  },
+}
+</script>

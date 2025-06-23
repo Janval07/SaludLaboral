@@ -171,14 +171,17 @@ export default {
       }
       const res = await this.$axios.post('https://localhost:44338/api/login', Estudiante)
 
-      if (res.data.rol == 'user') {
-        this.$router.push({ name: 'inicioalumno' })
-      } else if (res.data.rol == 'admin') {
-        this.$router.push({ name: 'inicioadmin' })
-      }
-      // else{
+      if (res.data.rol == 'user' || res.data.rol == 'admin') {
+        localStorage.setItem('userSession', JSON.stringify(res.data))
 
-      // }
+        if (res.data.rol == 'user') {
+          this.$router.push({ name: 'inicioalumno' })
+        } else if (res.data.rol == 'admin') {
+          this.$router.push({ name: 'inicioadmin' })
+        }
+      }
+
+      console.log('datos')
       console.log(res.data)
     },
   },

@@ -23,7 +23,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../Admin/Login.vue" target="_top">Salir</a>
+            <a class="nav-link" @click="Logout" target="_top">Salir</a>
           </li>
         </ul>
       </div>
@@ -61,4 +61,17 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {}
+  },
+  methods: {
+    async Logout() {
+      localStorage.removeItem('userSession')
+      this.$router.push({ name: 'login' })
+    },
+  },
+}
+</script>

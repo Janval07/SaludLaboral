@@ -21,7 +21,7 @@ public partial class Trabajador
 
     public int? Edad { get; set; }
 
-    [StringLength(10)]
+    [StringLength(50)]
     [Unicode(false)]
     public string? Sexo { get; set; }
 

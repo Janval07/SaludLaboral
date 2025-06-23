@@ -25,12 +25,6 @@ public partial class Formulario
 
     public int? id_pregunta { get; set; }
 
-    public int? id_categoria { get; set; }
-
-    [ForeignKey("id_categoria")]
-    [InverseProperty("Formulario")]
-    public virtual Categoria? id_categoriaNavigation { get; set; }
-
     [ForeignKey("id_pregunta")]
     [InverseProperty("Formulario")]
     public virtual Pregunta? id_preguntaNavigation { get; set; }

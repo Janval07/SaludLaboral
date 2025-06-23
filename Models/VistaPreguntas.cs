@@ -6,19 +6,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Final.Models;
 
-public partial class Categoria
+[Keyless]
+public partial class VistaPreguntas
 {
-    [Key]
+    public int id_pregunta { get; set; }
+
     public int id_categoria { get; set; }
 
     [StringLength(255)]
     [Unicode(false)]
-    public string? Descripcion { get; set; }
+    public string? CategoriaDescripcion { get; set; }
 
-    [StringLength(5)]
+    [StringLength(255)]
     [Unicode(false)]
-    public string? Valoracion { get; set; }
+    public string? PreguntaDescripcion { get; set; }
 
-    [InverseProperty("id_categoriaNavigation")]
-    public virtual ICollection<Pregunta> Pregunta { get; set; } = new List<Pregunta>();
+    public bool? IsEnabled { get; set; }
 }
