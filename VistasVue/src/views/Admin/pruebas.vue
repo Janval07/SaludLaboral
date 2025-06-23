@@ -124,9 +124,6 @@ export default {
 
       const res = await this.$axios.post('https://localhost:44338/api/GuardarRespuestas', CapRes)
 
-      console.log(res)
-      console.log(this.Respuesta)
-
       if (res.data > 0) {
         if (this.idPregunta <= this.Preguntas.length - 1) {
           this.idPregunta++
@@ -144,9 +141,20 @@ export default {
       }
     },
     submitAnswers() {
-      console.log('Respuestas enviadas:', this.answers)
-      alert('¡Respuestas enviadas! Revisa la consola.')
+      if (this.RespuestaSi == 'on') {
+        this.Respuesta = 'Si'
+      }
+      if (this.RespuestaNo == 'on') {
+        this.Respuesta = 'No'
+      }
+      if (this.Respuesta == null) {
+        alert('Responde la ultima pregunta!')
+        return
+      }
+      alert('¡Respuestas enviadas!')
       //Borrar datos de local
+
+      this.nextQuestion()
       localStorage.removeItem('DatosFormulario')
       this.$router.push('/')
     },

@@ -42,35 +42,18 @@ namespace Final.Controllers
             if (Captura == null)
                 return NoContent();
             else
-            {
-                // Buscar si existe el folio 
-
-
-
-                //Si no existe agrega uno nuevo
-
-
-
-                // Si existe actualiza el actual
-
-
-
-
-
-
+            {              
                 //Guadar empresa
                 int idEmpresa = new DatosEmpresa().GuardarEmpresa(Captura.Empresa);
 
                 // Guardar Trabajador
                 //Se asigna el id de la empresa a trabajador
                 Captura.Trabajador.Id_empresa = idEmpresa;
-                int idTrabajador = new DatosTrabajador().GuardarTrabajador(Captura.Trabajador);
+                int idTrabajador = new DatosTrabajador().GuardarTrabajador(Captura.Trabajador, Captura.Formulario[0].Folio);
 
                 //Se asignan los id y se regresan los datos a la vista
                 Captura.Empresa.Id_empresa = idEmpresa;
                 Captura.Trabajador.Id_trabajador = idTrabajador;
-
-
 
                 return Ok(Captura);
 
