@@ -172,7 +172,7 @@ export default {
       localStorage.setItem('DatosFormulario', JSON.stringify(res.data))
 
       //Captura de preguntas de formulario
-      this.$router.push('/pruebas')
+      this.$router.push('/formulario2')
     },
   },
 }

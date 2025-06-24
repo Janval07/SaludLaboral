@@ -36,13 +36,7 @@
               <div class="card-body">
                 <i class="bi bi-people-fill display-4 mb-3"></i>
                 <h5 class="card-title">Trabajadores y diagnóstico</h5>
-                <form
-                  action="http://localhost:8080/Proyecto_SaludLaboral/ServletJoin"
-                  method="post"
-                  target="mainFrame"
-                >
-                  <button type="submit" class="boton">Ingresar</button>
-                </form>
+                <button @click="$router.push('/resultado')" class="boton">Ingresar</button>
               </div>
             </div>
           </div>
@@ -53,13 +47,7 @@
               <div class="card-body">
                 <i class="bi bi-person-lines-fill display-4 mb-3"></i>
                 <h5 class="card-title">Info. de trabajadores</h5>
-                <form
-                  action="http://localhost:8080/Proyecto_SaludLaboral/ServletConsultarTrabajador"
-                  method="post"
-                  target="mainFrame"
-                >
-                  <button type="submit" class="boton">Ingresar</button>
-                </form>
+                <button @click="mensaje" class="boton">Ingresar</button>
               </div>
             </div>
           </div>
@@ -70,19 +58,14 @@
               <div class="card-body">
                 <i class="bi bi-ui-checks-grid display-4 mb-3"></i>
                 <h5 class="card-title">Estructura del formulario</h5>
-                <form
-                  action="http://localhost:8080/Proyecto_SaludLaboral/ServletConsultarForm"
-                  method="post"
-                  target="mainFrame"
-                >
-                  <button type="submit" class="boton">Ingresar</button>
-                </form>
+
+                <button @click="mensaje" class="boton">Ingresar</button>
               </div>
             </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="col">
+          <!-- <div class="col">
             <div class="card h-100 shadow-sm rounded-3">
               <div class="card-body">
                 <i class="bi bi-bar-chart-line-fill display-4 mb-3"></i>
@@ -90,7 +73,7 @@
                 <a href="../Admin/Resultados.vue" target="mainFrame" class="boton">Ingresar</a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- Botón regresar -->
@@ -102,4 +85,18 @@
   </section>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {}
+  },
+
+  methods: {
+    mensaje() {
+      alert('Disponible para el siguiente semestre!')
+    },
+  },
+
+  async mounted() {},
+}
+</script>

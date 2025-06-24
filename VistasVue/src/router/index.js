@@ -4,6 +4,7 @@ import Login from '@/views/Login.vue'
 import InicioAdmin from '@/views/Admin/InicioAdmin.vue'
 import guia from '@/views/Admin/guia.vue'
 import formulario from '@/views/Admin/formulario.vue'
+import formulario2 from '@/views/Admin/formulario2.vue'
 import ayuda from '@/views/Admin/ayuda.vue'
 import AdminUser from '@/views/Admin/AdminUser.vue'
 import AgregarUser from '@/views/Admin/AgregarUser.vue'
@@ -13,7 +14,7 @@ import Informe from '@/views/Admin/Informe.vue'
 import ModificarUser from '@/views/Admin/ModificarUser.vue'
 import Resultados from '@/views/Admin/Resultados.vue'
 import InicioAlumno from '@/views/User/InicioAlumno.vue'
-import pruebas from '@/views/Admin/pruebas.vue'
+import resultado from '@/views/Admin/resultado.vue'
 import NoAutorizado from '@/views/Admin/NoAutorizado.vue'
 
 const router = createRouter({
@@ -32,9 +33,9 @@ const router = createRouter({
       meta: { requiresAuth: true, requiredRole: 'all' },
     },
     {
-      path: '/pruebas',
-      name: 'pruebas',
-      component: pruebas,
+      path: '/resultado',
+      name: 'resultado',
+      component: resultado,
       meta: { requiresAuth: true, requiredRole: 'all' },
     },
     {
@@ -53,6 +54,12 @@ const router = createRouter({
       path: '/formulario',
       name: 'formulario',
       component: formulario,
+      meta: { requiresAuth: true, requiredRole: 'all' },
+    },
+    {
+      path: '/formulario2',
+      name: 'formulario2',
+      component: formulario2,
       meta: { requiresAuth: true, requiredRole: 'all' },
     },
     {

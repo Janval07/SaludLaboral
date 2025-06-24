@@ -14,31 +14,70 @@
       <br />
 
       <label for="id">ID: </label>
-      <input type="number" id="id" name="id" /><br /><br />
+      <input v-model="id_estudiante" type="number" id="id" name="id" /><br /><br />
 
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" /><br /><br />
+      <div>
+        <label for="nombre">Nombre:</label>
+        {{ estudiante.nombre }}
+      </div>
+      <br /><br />
 
-      <label for="apellidos">Apellidos:</label>
-      <input type="text" id="apellidos" name="apellidos" /><br /><br />
+      <div>
+        <label for="apellidos">Apellidos:</label>
+        {{ estudiante.apellidos }}
+      </div>
+      <br /><br />
 
-      <label for="grupo">Grupo:</label>
-      <input type="text" id="grupo" name="grupo" /><br /><br />
+      <div>
+        <label for="grupo">Grupo:</label>
+        {{ estudiante.grupo }}
+      </div>
+      <br /><br />
 
-      <label for="password">Contrase&ntilde;a:</label>
-      <input type="text" id="password" name="password" /><br /><br />
+      <div>
+        <label for="grupo">Rol:</label>
+        {{ estudiante.rol }}
+      </div>
+      <br /><br />
 
       <p class="d-flex justify-content-center">
         Si desea ver todos los estudiantes registrados s&oacute;lo presione Enviar:
       </p>
       <br />
 
-      <input type="submit" class="boton" value="Enviar" />
-      <input type="reset" value="Limpiar" class="boton" />
+      <input @click="ObtenerUsuario" class="boton" value="Enviar" />
+      <input @click="LimpiarCampos" value="Limpiar" class="boton" />
     </form>
     <br />
     <p><a href="../Admin/AdminUser.vue" class="regresar">Regresar</a></p>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      id_estudiante: null,
+      estudiante: {},
+    }
+  },
+  methods: {
+    async ObtenerUsuario() {
+      var Usuario = {
+        Id_estudiante: this.id_estudiante,
+      }
+      console.log(Usuario)
+      const res = await this.$axios.post('https://localhost:44338/api/ConsultarUsuario', Usuario)
+      console.log(res)
+
+      this.estudiante = res.data
+    },
+
+    async LimpiarCampos() {
+      this.id_estudiante = null
+      this.estudiante = {}
+    },
+  },
+}
+</script>

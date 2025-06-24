@@ -4,17 +4,41 @@
   </div>
   <div class="centro">
     <br /><br />
-    <form action="http://localhost:8080/Proyecto_SaludLaboral/ServletEliminarUsuario" method="post">
+    <form>
       <label for="id">ID del alumno:</label>
-      <input type="number" id="id" name="id" required /><br /><br />
+      <input v-model="id_estudiante" type="number" id="id" name="id" required /><br /><br />
 
-      <input type="submit" class="boton" value="Enviar" onclick="confirmarBaja();" />
-      <input type="reset" value="Limpiar" class="boton" />
+      <input @click="ConfirmarBaja" class="boton" value="Eliminar" />
+      <input @click="LimpiarCampos" value="Limpiar" class="boton" />
     </form>
 
     <br />
-    <p><a href="../Admin/AdminUser.vue" class="regresar">Regresar</a></p>
+    <p><router-link to="/AdminUser" class="regresar"> Regresar </router-link></p>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      id_estudiante: null,
+    }
+  },
+  methods: {
+    async ConfirmarBaja() {
+      var id = {
+        Id_estudiante: this.id_estudiante,
+      }
+
+      await this.$axios.post('https://localhost:44338/api/EliminarUsuario', id)
+      this.LimpiarCampos()
+      alert('¡Usuario eliminado con éxito!')
+    },
+
+    async LimpiarCampos() {
+      this.id_estudiante = null
+    },
+  },
+}
+</script>

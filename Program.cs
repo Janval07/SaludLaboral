@@ -46,7 +46,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Configuración SPA (sin SpaServices)
+// Configuración SPA (sin SpaServices) VUE
 if (app.Environment.IsDevelopment())
 {
     // Redirige a servidor de desarrollo de Vue (ej. Vite)
