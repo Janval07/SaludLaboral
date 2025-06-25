@@ -78,7 +78,7 @@
 
         <!-- Botón regresar -->
         <div class="text-center mt-5">
-          <a href="../Admin/InicioAdmin.vue" class="boton">Regresar</a>
+          <router-link to="/InicioAdmin" class="boton"> Regresar </router-link>
         </div>
       </div>
     </div>

@@ -15,11 +15,13 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../Admin/guia.vue" target="mainFrame">Guía de Evaluación</a>
+            <router-link to="/guia" target="mainFrame" class="nav-link">
+              Guía de Evaluación
+            </router-link>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../Admin/ayuda.vue" target="mainFrame">Ayuda</a>
+            <router-link to="/ayuda" target="mainFrame" class="nav-link"> Ayuda </router-link>
           </li>
 
           <li class="nav-item">

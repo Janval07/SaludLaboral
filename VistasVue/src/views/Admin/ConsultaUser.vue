@@ -49,7 +49,7 @@
       <input @click="LimpiarCampos" value="Limpiar" class="boton" />
     </form>
     <br />
-    <p><a href="../Admin/AdminUser.vue" class="regresar">Regresar</a></p>
+    <p><router-link to="/AdminUser" class="regresar"> Regresar </router-link></p>
   </div>
 </template>
 

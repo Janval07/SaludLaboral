@@ -79,7 +79,7 @@
             <div class="card-body">
               <i class="bi bi-journal-text display-4 mb-3"></i>
               <h5 class="card-title">Solicitar informe</h5>
-              <router-link to="/Informe" target="mainFrame" class="boton"> Informe </router-link>
+              <router-link to="/informe" target="mainFrame" class="boton"> Informe </router-link>
             </div>
           </div>
         </div>
