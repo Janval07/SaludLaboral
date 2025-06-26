@@ -4,107 +4,96 @@
   </div>
   <div class="contenedor">
     <br />
-    <form
-      action="http://localhost:8080/Proyecto_SaludLaboral/ServletGuardarRespuestas"
-      method="post"
-    >
-      <!-- Página 1 -->
-      <div class="pagina" id="pagina1">
-        <fieldset class="fieldset">
-          <legend>Descriptivos de la Persona</legend>
+    <!-- Página 1 -->
+    <div class="pagina" id="pagina1">
+      <fieldset class="fieldset">
+        <legend>Descriptivos de la Persona</legend>
 
-          <label for="folio" class="label">Folio:</label>
-          <input
-            type="text"
-            v-model="folio"
-            id="folio"
-            name="folio"
-            class="input"
-            required
-          /><br /><br />
+        <label for="folio" class="label">Folio:</label>
+        <input
+          type="text"
+          v-model="folio"
+          id="folio"
+          name="folio"
+          class="input"
+          required
+        /><br /><br />
 
-          <label for="fecha" class="label">Fecha:</label>
-          <input type="date" v-model="fecha" id="fecha" name="fecha" class="input" required />
-          <br /><br />
+        <label for="fecha" class="label">Fecha:</label>
+        <input type="date" v-model="fecha" id="fecha" name="fecha" class="input" required />
+        <br /><br />
 
-          <label for="nombre" class="label">Nombre:</label>
-          <input type="text" v-model="nombre" id="nombre" name="nombre" class="input" required />
-          <br /><br />
+        <label for="nombre" class="label">Nombre:</label>
+        <input type="text" v-model="nombre" id="nombre" name="nombre" class="input" required />
+        <br /><br />
 
-          <label for="apellidos" class="label">Apellidos:</label>
-          <input
-            type="text"
-            id="apellidos"
-            v-model="apellidos"
-            name="apellidos"
-            class="input"
-            required
-          />
-          <br /><br />
+        <label for="apellidos" class="label">Apellidos:</label>
+        <input
+          type="text"
+          id="apellidos"
+          v-model="apellidos"
+          name="apellidos"
+          class="input"
+          required
+        />
+        <br /><br />
 
-          <label for="edad" class="label">Edad:</label>
-          <input
-            type="number"
-            v-model="edad"
-            id="edad"
-            name="edad"
-            class="input"
-            required
-          /><br /><br />
+        <label for="edad" class="label">Edad:</label>
+        <input
+          type="number"
+          v-model="edad"
+          id="edad"
+          name="edad"
+          class="input"
+          required
+        /><br /><br />
 
-          <label for="sexo" class="label">Sexo:</label>
-          <select id="sexo" name="sexo" class="select" v-model="sexo" required>
-            <option value="">Seleccione una opci&oacute;n</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-            <option value="Prefiero no Contestar">Prefiero no Contestar</option></select
-          ><br /><br />
+        <label for="sexo" class="label">Sexo:</label>
+        <select id="sexo" name="sexo" class="select" v-model="sexo" required>
+          <option value="">Seleccione una opci&oacute;n</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Prefiero no Contestar">Prefiero no Contestar</option></select
+        ><br /><br />
 
-          <label for="estadocivil" class="label">Estado Civil:</label>
-          <select
-            id="estadocivil"
-            name="estadocivil"
-            v-model="estado_civil"
-            class="select"
-            required
-          >
-            <option value="">Seleccione una opci&oacute;n</option>
-            <option value="Soltero">Soltero</option>
-            <option value="Casado">Casado</option>
-            <option value="Divorciado">Divorciado</option>
-            <option value="Union Libre">Union Libre</option>
-            <option value="Viudo">Viudo</option>
-            <option value="Otro">Otro</option></select
-          ><br /><br />
+        <label for="estadocivil" class="label">Estado Civil:</label>
+        <select id="estadocivil" name="estadocivil" v-model="estado_civil" class="select" required>
+          <option value="">Seleccione una opci&oacute;n</option>
+          <option value="Soltero">Soltero</option>
+          <option value="Casado">Casado</option>
+          <option value="Divorciado">Divorciado</option>
+          <option value="Union Libre">Union Libre</option>
+          <option value="Viudo">Viudo</option>
+          <option value="Otro">Otro</option></select
+        ><br /><br />
 
-          <label for="escolaridad" class="label">Escolaridad:</label>
-          <select id="escolaridad" name="escolaridad" v-model="escolaridad" class="select" required>
-            <option value="">Seleccione una opci&oacute;n</option>
-            <option value="Prescolar">Prescolar</option>
-            <option value="Primaria">Primaria</option>
-            <option value="Secundaria">Secundaria</option>
-            <option value="Media Superior">Media Superior</option>
-            <option value="Superior">Superior</option>
-            <option value="Otro">Otro</option></select
-          ><br /><br />
+        <label for="escolaridad" class="label">Escolaridad:</label>
+        <select id="escolaridad" name="escolaridad" v-model="escolaridad" class="select" required>
+          <option value="">Seleccione una opci&oacute;n</option>
+          <option value="Prescolar">Prescolar</option>
+          <option value="Primaria">Primaria</option>
+          <option value="Secundaria">Secundaria</option>
+          <option value="Media Superior">Media Superior</option>
+          <option value="Superior">Superior</option>
+          <option value="Otro">Otro</option></select
+        ><br /><br />
 
-          <label for="empresa" class="label">Empresa:</label>
-          <input
-            type="text"
-            id="empresa"
-            name="empresa"
-            v-model="nombre_empresa"
-            class="input"
-            required
-          /><br /><br />
-        </fieldset>
-        <div class="navegacion">
-          <button type="button" class="boton-completo" @click="siguiente">
-            <span class="flecha">&#x25B6;</span> Siguiente
-          </button>
-        </div>
+        <label for="empresa" class="label">Empresa:</label>
+        <input
+          type="text"
+          id="empresa"
+          name="empresa"
+          v-model="nombre_empresa"
+          class="input"
+          required
+        /><br /><br />
+      </fieldset>
+      <div class="navegacion">
+        <button type="button" class="boton-completo" @click="siguiente">
+          <span class="flecha">&#x25B6;</span> Siguiente
+        </button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -163,11 +152,11 @@ export default {
       }
       console.log(CapturaFormulario)
       const res = await this.$axios.post(
-        'https://localhost:44338/api/GuardarDatosFormulario',
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/GuardarDatosFormulario',
         CapturaFormulario,
       )
 
-      console.log(res)
+      console.log(res.data)
 
       localStorage.setItem('DatosFormulario', JSON.stringify(res.data))
 

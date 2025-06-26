@@ -169,10 +169,8 @@ export default {
         id_estudiante: this.usuario,
         contrasena: this.contrasena,
       }
-      const res = await this.$axios.post(
-        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/login',
-        Estudiante,
-      )
+      //https://localhost:44338
+          const res = await this.$axios.post('https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/login', Estudiante)
 
       if (res.data.rol == 'user' || res.data.rol == 'admin') {
         localStorage.setItem('userSession', JSON.stringify(res.data))
@@ -184,8 +182,8 @@ export default {
         }
       }
 
-      console.log('datos')
-      console.log(res.data)
+      // console.log('datos')
+      // console.log(res.data)
     },
   },
 }

@@ -72,7 +72,7 @@ export default {
       {},
     )
     this.trabajadores = res.data
-    console.log(res)
+    // console.log(res)
   },
 }
 </script>

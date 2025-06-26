@@ -12,7 +12,6 @@ import ConsultaUser from '@/views/Admin/ConsultaUser.vue'
 import EliminarUser from '@/views/Admin/EliminarUser.vue'
 import Informe from '@/views/Admin/Informe.vue'
 import ModificarUser from '@/views/Admin/ModificarUser.vue'
-import Resultados from '@/views/Admin/Resultados.vue'
 import InicioAlumno from '@/views/User/InicioAlumno.vue'
 import resultado from '@/views/Admin/resultado.vue'
 import NoAutorizado from '@/views/Admin/NoAutorizado.vue'
@@ -102,12 +101,6 @@ const router = createRouter({
       path: '/modificaruser',
       name: 'modificaruser',
       component: ModificarUser,
-      meta: { requiresAuth: true, requiredRole: 'admin' },
-    },
-    {
-      path: '/resultados',
-      name: 'resultados',
-      component: Resultados,
       meta: { requiresAuth: true, requiredRole: 'admin' },
     },
     {

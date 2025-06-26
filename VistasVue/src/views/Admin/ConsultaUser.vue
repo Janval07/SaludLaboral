@@ -72,7 +72,7 @@ export default {
         'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ConsultarUsuario',
         Usuario,
       )
-      console.log(res)
+      // console.log(res)
 
       this.estudiante = res.data
     },

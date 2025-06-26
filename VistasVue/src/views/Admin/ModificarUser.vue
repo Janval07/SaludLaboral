@@ -74,7 +74,7 @@ export default {
         Contrasena: this.contrasena,
         Rol: this.rol,
       }
-      console.log(Usuario)
+      // console.log(Usuario)
       await this.$axios.post(
         'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ModificarUsuario',
         Usuario,
