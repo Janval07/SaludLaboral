@@ -35,8 +35,9 @@
 
             //Forma mas moderna con IConfiguration
             //return _configuration.GetConnectionString(LlaveCadena);
-            return "Server=DESKTOP-FSGELDJ\\SQLEXPRESS;Database=SaludLaboral;User Id=sa;Password=admin;TrustServerCertificate=True;";
-            }
+            //return "Server=DESKTOP-FSGELDJ\\SQLEXPRESS;Database=SaludLaboral;User Id=sa;Password=admin;TrustServerCertificate=True;";
+            return "Server=tcp:saludlaboralserverdb.database.windows.net,1433;Initial Catalog=SaludLaboral;Persist Security Info=False;User ID=janval;Password=Proyecto.Final;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        }
 
 
         }

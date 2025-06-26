@@ -68,7 +68,10 @@ export default {
         Id_estudiante: this.id_estudiante,
       }
       console.log(Usuario)
-      const res = await this.$axios.post('https://localhost:44338/api/ConsultarUsuario', Usuario)
+      const res = await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ConsultarUsuario',
+        Usuario,
+      )
       console.log(res)
 
       this.estudiante = res.data

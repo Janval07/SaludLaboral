@@ -147,7 +147,10 @@ export default {
         Id_pregunta: this.idPregunta,
       }
 
-      const res = await this.$axios.post('https://localhost:44338/api/GuardarRespuestas', CapRes)
+      const res = await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/GuardarRespuestas',
+        CapRes,
+      )
 
       if (res.data > 0) {
         if (this.idPregunta <= this.Preguntas.length - 1) {
@@ -200,7 +203,7 @@ export default {
     this.CapturaRespuestas = JSON.parse(localStorage.getItem('DatosFormulario'))
 
     const res = await this.$axios.post(
-      'https://localhost:44338/api/ObtenerPreguntas',
+      'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ObtenerPreguntas',
       this.CapturaRespuestas,
     )
     //console.log(res)
@@ -208,7 +211,9 @@ export default {
     this.Preguntas = res.data
 
     //Consultar Opciones
-    const op = await this.$axios.get('https://localhost:44338/api/ObtenerOpciones')
+    const op = await this.$axios.get(
+      'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ObtenerOpciones',
+    )
     // Se asigna resultado a variable opciones
     this.Opciones = op.data
 

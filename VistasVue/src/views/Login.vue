@@ -169,7 +169,10 @@ export default {
         id_estudiante: this.usuario,
         contrasena: this.contrasena,
       }
-      const res = await this.$axios.post('https://localhost:44338/api/login', Estudiante)
+      const res = await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/login',
+        Estudiante,
+      )
 
       if (res.data.rol == 'user' || res.data.rol == 'admin') {
         localStorage.setItem('userSession', JSON.stringify(res.data))

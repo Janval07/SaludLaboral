@@ -63,7 +63,10 @@ export default {
         Rol: this.rol,
       }
 
-      await this.$axios.post('https://localhost:44338/api/AgregarUsuario', Usuario)
+      await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/AgregarUsuario',
+        Usuario,
+      )
       this.LimpiarCampos()
       alert('¡Usuario registrado con éxito!')
     },

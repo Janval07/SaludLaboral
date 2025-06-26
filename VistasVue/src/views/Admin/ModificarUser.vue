@@ -75,7 +75,10 @@ export default {
         Rol: this.rol,
       }
       console.log(Usuario)
-      await this.$axios.post('https://localhost:44338/api/ModificarUsuario', Usuario)
+      await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ModificarUsuario',
+        Usuario,
+      )
       this.LimpiarCampos()
       alert('¡Usuario actualizado con éxito!')
     },

@@ -31,7 +31,10 @@ export default {
         Id_estudiante: this.id_estudiante,
       }
 
-      await this.$axios.post('https://localhost:44338/api/EliminarUsuario', id)
+      await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/EliminarUsuario',
+        id,
+      )
       this.LimpiarCampos()
       alert('¡Usuario eliminado con éxito!')
     },

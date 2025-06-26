@@ -67,7 +67,10 @@ export default {
   },
   methods: {},
   async mounted() {
-    const res = await this.$axios.post('https://localhost:44338/api/ConsultarTrabajador', {})
+    const res = await this.$axios.post(
+      'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/ConsultarTrabajador',
+      {},
+    )
     this.trabajadores = res.data
     console.log(res)
   },

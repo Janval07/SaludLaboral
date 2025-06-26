@@ -14,6 +14,16 @@ namespace Final.Controllers
 
         public IActionResult test()
         {
+            var test = new DatosEstudiante().Test(1);
+            return Ok("hola");
+        }
+
+        [HttpGet]
+        [Route("api/test2")]
+
+        public IActionResult test2()
+        {
+            
             return Ok("hola");
         }
 

@@ -7,6 +7,20 @@ namespace Final.Datos
 {
     public class DatosEstudiante : DatosBase
     {
+        public EntEstudiante Test(int id)
+        {
+            var data = context.Estudiante
+                .AsNoTracking()
+                .Where(w => w.id_estudiante == id)
+                .FirstOrDefault();
+
+            //Convierte los resultados de base de datos a un objeto igual a la tabla
+            EntEstudiante datosEstudiantes = mapperEntity.ToEntity<EntEstudiante>(data);
+
+            return datosEstudiantes;
+        }
+
+
         public EntEstudiante ValidaUsuario(EntEstudiante Estudiante)
         {
             var data = context.Estudiante
