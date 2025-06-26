@@ -7,3 +7,7 @@
 /obj
 /VistasVue/.vs
 /VistasVue/.vscode
+/bin/Release/net8.0
+/.config
+/Properties/PublishProfiles
+/Properties/ServiceDependencies/SaludLaboral6toUAA - Web Deploy/profile.arm.json
