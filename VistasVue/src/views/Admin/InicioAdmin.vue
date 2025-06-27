@@ -54,7 +54,7 @@
           <div class="card mb-4 rounded-3 shadow-sm h-100">
             <div class="card-body">
               <i class="bi bi-file-earmark-text display-4 mb-3"></i>
-              <h5 class="card-title">Visualizar entrevista</h5>
+              <h5 class="card-title">Realizar entrevista</h5>
               <router-link to="/formulario" target="mainFrame" class="boton">
                 Formulario
               </router-link>

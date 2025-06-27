@@ -147,6 +147,7 @@
 
       <div class="d-flex justify-content-center">
         <button class="boton" @click="login">Ingresar</button>
+        <!-- :disabled="!isEnabled" -->
       </div>
       <!-- </form> -->
       <div id="mensajeError" class="mensaje-error"></div>
@@ -161,17 +162,22 @@ export default {
     return {
       usuario: '',
       contrasena: '',
+      isEnabled: true,
     }
   },
   methods: {
     async login() {
+      this.isEnabled = false
       var Estudiante = {
         id_estudiante: this.usuario,
         contrasena: this.contrasena,
       }
       //https://localhost:44338
-          const res = await this.$axios.post('https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/login', Estudiante)
-
+      const res = await this.$axios.post(
+        'https://saludlaboral6touaa-f8gccmcccghddqad.mexicocentral-01.azurewebsites.net/api/login',
+        Estudiante,
+      )
+      // this.isEnabled = true
       if (res.data.rol == 'user' || res.data.rol == 'admin') {
         localStorage.setItem('userSession', JSON.stringify(res.data))
 
